@@ -1,0 +1,33 @@
+//Given a non-empty array of integers, every element appears three times except for one, which appears exactly once. Find that single one
+public class Main
+{
+    static void Number_Occurred_Once(ArrayList<Integer> al)
+{
+    int i=0,element;
+    while(i<al.size())
+    {
+        element=al.get(i);
+        al.remove(i);
+        if(al.contains(element))
+           al.add(i,element);
+        else
+        {
+           System.out.println(element);
+           break;
+        }
+        i++;
+    }
+    
+}
+	public static void main(String[] args)
+	{
+	     
+	     int[] array={1,2,1,3,1,2,2};
+	     int n=7;
+	     ArrayList<Integer> al=new ArrayList<>();
+	     for(int i=0;i<n;i++)
+	      al.add(array[i]);
+	     Number_Occurred_Once(al);
+	     
+	}
+}
